@@ -16,8 +16,8 @@ pipeline {
 
         stage ('Build') {
             steps {
-                sh 'cd project/my-app'
-                sh 'mvn -Dmaven.test.failure.ignore=true install' 
+      
+                sh 'mvn -f project/my-app/pom.xml -Dmaven.test.failure.ignore=true install' 
             }
             post {
                 success {
